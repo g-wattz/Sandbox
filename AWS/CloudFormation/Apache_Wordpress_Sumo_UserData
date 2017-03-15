@@ -1,0 +1,15 @@
+#!/bin/bash
+yum install httpd php mysql php-mysql -y
+yum update -y
+chkconfig httpd on
+service httpd start
+cd /var/www/html
+wget https://wordpress.org/latest.tar.gz
+tar -zxvf latest.tar.gz --strip 1
+rm latest.tar.gz
+cp wp-config-sample.php wp-config.php
+mkdir /opt/SumoSources
+cd /opt/SumoSources
+sources_json='{"api.version":"v1","sources":[{"sourceType":"LocalFile","name":"test/apache","pathExpression":"/var/log/httpd/*_log"}]}'
+echo $sources_json >> /opt/SumoSources/sources.json
+sudo wget "https://collectors.us2.sumologic.com/rest/download/linux/64" -O SumoCollector.sh && sudo chmod +x SumoCollector.sh && sudo ./SumoCollector.sh -q -Vsumo.accessid=<SumoAccessID> -Vsumo.accesskey=<SumoAccessKey> -VsyncSources=/opt/SumoSources/sources.json -Vcollector.name=UserDataTest2

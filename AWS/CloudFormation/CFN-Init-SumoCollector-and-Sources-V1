@@ -100,6 +100,7 @@ Resources:
             - "configure_cfn"
             - "install_wordpress"
             - "config_wordpress"
+            - "config_sumo"
         configure_cfn:
           files:
             /etc/cfn/hooks.d/cfn-auto-reloader.conf:
@@ -140,7 +141,6 @@ Resources:
               php-mysql: []
           sources:
             /var/www/html: "http://wordpress.org/latest.tar.gz"
-            /opt/SumoSources: "https://raw.githubusercontent.com/g-wattz/Sandbox/master/AWS/CloudFormation/SumoSources/sources.json"
           services:
             sysvinit:
               httpd:
@@ -168,5 +168,9 @@ Resources:
               cwd: "/var/www/html/wordpress"
               command: !Sub |
                 sed -i 's/password_here/${DatabasePassword}/g' wp-config.php
+        config_sumo:
+          files:
+            /opt/SumoSources/sources.json:
+              source: "https://raw.githubusercontent.com/g-wattz/Sandbox/master/AWS/CloudFormation/SumoSources/Apache_Linux_CFN-Init_Metrics"
   S3:
     Type: "AWS::S3::Bucket"

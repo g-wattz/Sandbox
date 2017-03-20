@@ -23,9 +23,11 @@ Parameters:
   SumoCollectorAccessID:
     Type: String
     Default: accessid
+    NoEcho: true
   SumoCollectorAccessKey:
     Type: String
     Default: accesskey
+    NoEcho: true
 Mappings:
   RegionMap:
     us-east-1:

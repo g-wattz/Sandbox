@@ -171,6 +171,6 @@ Resources:
         config_sumo:
           files:
             /opt/SumoSources/sources.json:
-              source: "https://raw.githubusercontent.com/g-wattz/Sandbox/master/AWS/CloudFormation/SumoSources/Apache_Linux_CFN-Init_Metrics"
+              source: "https://raw.githubusercontent.com/g-wattz/Sandbox/master/AWS/CloudFormation/SumoSources/CFN-Wordpress-Plus-Sumo-Sources-V2"
   S3:
     Type: "AWS::S3::Bucket"

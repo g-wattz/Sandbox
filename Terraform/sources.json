@@ -2,8 +2,8 @@
   "api.version":"v1",
   "sources":[{
     "name":"Cron Logs",
-    "category":"test/app/cron",
-    "pathExpression":"/var/log/httpd/*_log",
+    "category":"test/linux/cron",
+    "pathExpression":"/var/log/cron*",
     "cutoffRelativeTime":"-1h",
     "sourceType":"LocalFile"
   },{

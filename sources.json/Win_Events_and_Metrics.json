@@ -1,0 +1,32 @@
+{
+  "api.version":"v1",
+  "sources":[{
+    "name":"<Sub_Name> Windows Metrics",
+    "category":"<Sub_Name>/Prod/Windows/Metrics",
+    "automaticDateParsing":false,
+    "multilineProcessingEnabled":false,
+    "useAutolineMatching":false,
+    "contentType":"HostMetrics",
+    "forceTimeZone":false,
+    "filters":[],
+    "cutoffTimestamp":0,
+    "encoding":"UTF-8",
+    "interval":60000,
+    "metrics":["CPU_User","CPU_Sys","CPU_Nice","CPU_Idle","CPU_IOWait","CPU_Irq","CPU_SoftIrq","CPU_Stolen","CPU_LoadAvg_1min","CPU_LoadAvg_5min","CPU_LoadAvg_15min","Mem_Total","Mem_Used","Mem_Free","Mem_ActualFree","Mem_ActualUsed","Mem_UsedPercent","Mem_FreePercent","Mem_PhysicalRam","Net_InPackets","Net_OutPackets","Net_InBytes","Net_OutBytes","Disk_Reads","Disk_ReadBytes","Disk_Writes","Disk_WriteBytes","Disk_Queue","Disk_InodesAvailable","Disk_Used","Disk_Available"],
+    "sourceType":"SystemStats"
+  },{
+    "name":"Windows Logs",
+    "category":"<Sub_Name>/<env>/Windows/Events",
+    "automaticDateParsing":true,
+    "multilineProcessingEnabled":false,
+    "useAutolineMatching":false,
+    "forceTimeZone":false,
+    "filters":[],
+    "cutoffRealtiveTime":"-7d",
+    "encoding":"UTF-8",
+    "logNames":["Security","Application","System"],
+    "renderMessages":true,
+    "sidStyle":2,
+    "sourceType":"LocalWindowsEventLog"
+  }]
+}

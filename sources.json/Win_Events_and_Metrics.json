@@ -1,8 +1,8 @@
 {
   "api.version":"v1",
   "sources":[{
-    "name":"<Sub_Name> Windows Metrics",
-    "category":"<Sub_Name>/Prod/Windows/Metrics",
+    "name":"<Name> Windows Metrics",
+    "category":"<Name>/<env>/Windows/Metrics",
     "automaticDateParsing":false,
     "multilineProcessingEnabled":false,
     "useAutolineMatching":false,
@@ -16,7 +16,7 @@
     "sourceType":"SystemStats"
   },{
     "name":"Windows Logs",
-    "category":"<Sub_Name>/<env>/Windows/Events",
+    "category":"<Name>/<env>/Windows/Events",
     "automaticDateParsing":true,
     "multilineProcessingEnabled":false,
     "useAutolineMatching":false,
